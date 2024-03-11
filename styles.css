@@ -1,0 +1,312 @@
+*, ::before, ::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font: 12pt Roboto, sans-serif;
+}
+
+body {
+  background-color: #000;
+  color: #FFF;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ////////////////////////////////////////////////////////////////////// */
+:root {
+  --radius: 8px;
+  --vh: 200%;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .top,
+body .middle,
+body .bottom {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .top {
+  -webkit-box-flex: 6;
+      -ms-flex-positive: 6;
+          flex-grow: 6;
+}
+
+body .middle {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body .bottom {
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+.controls {
+  min-width: 50%;
+  padding: 48px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.controls .start,
+.controls .pause,
+.controls .stop {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: var(--radius);
+  padding: 12px 24px;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: #333;
+  color: #FFF;
+  font-size: 20px;
+}
+
+.controls .start:hover,
+.controls .pause:hover,
+.controls .stop:hover {
+  cursor: pointer;
+  background-color: #444;
+  color: #FFF;
+}
+
+.controls .start:hover:active,
+.controls .pause:hover:active,
+.controls .stop:hover:active {
+  background-color: #333;
+}
+
+.controls .start {
+  -webkit-box-shadow: 0 0 0 1px #666;
+          box-shadow: 0 0 0 1px #666;
+}
+
+.controls .pause {
+  -webkit-box-shadow: 0 0 0 1px #666;
+          box-shadow: 0 0 0 1px #666;
+  background-color: #111;
+  color: #AAA;
+}
+
+.controls .stop {
+  -webkit-box-shadow: 0 0 0 1px #D33;
+          box-shadow: 0 0 0 1px #D33;
+  background-color: #211;
+}
+
+.cronometro {
+  color: #EEE;
+  text-align: center;
+}
+
+.cronometro .state {
+  font-size: 32px;
+  opacity: .6;
+}
+
+.cronometro .time {
+  font-size: 96px;
+}
+
+.cronometro .info {
+  opacity: .3;
+  font-size: 20px;
+}
+
+.parameters {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+      grid-template-areas: "drawTime drawTime restTime restTime duration duration" "startCountdown startCountdown drawCountdown drawCountdown restCountdown restCountdown";
+  gap: 8px;
+  width: 50%;
+}
+
+.parameters input {
+  margin-top: 4px;
+  width: 100%;
+  background-color: #222;
+  -webkit-box-shadow: 0 0 0 1px #333;
+          box-shadow: 0 0 0 1px #333;
+  height: 32px;
+  color: #BBB;
+  border-radius: var(--radius);
+  padding: 0 var(--radius);
+  border: none;
+}
+
+.parameters input::-webkit-input-placeholder {
+  color: #555;
+}
+
+.parameters input:-ms-input-placeholder {
+  color: #555;
+}
+
+.parameters input::-ms-input-placeholder {
+  color: #555;
+}
+
+.parameters input::placeholder {
+  color: #555;
+}
+
+.parameters label {
+  color: #999;
+  font-size: 12px;
+}
+
+.parameters .drawTime {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: drawTime;
+}
+
+.parameters .restTime {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: restTime;
+}
+
+.parameters .duration {
+  -ms-grid-row: 1;
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 2;
+  grid-area: duration;
+}
+
+.parameters .startCountdown {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: startCountdown;
+}
+
+.parameters .drawCountdown {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  -ms-grid-column-span: 2;
+  grid-area: drawCountdown;
+}
+
+.parameters .restCountdown {
+  -ms-grid-row: 2;
+  -ms-grid-column: 5;
+  -ms-grid-column-span: 2;
+  grid-area: restCountdown;
+}
+
+/* ////////////////////////////////////////////////////////////////////// */
+@media screen and (orientation: landscape) and (max-height: 512px) {
+  body {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    -ms-grid-rows: 2fr 1fr;
+        grid-template-rows: 2fr 1fr;
+  }
+  .parameters {
+    width: 100%;
+  }
+  .controls {
+    width: 100%;
+    height: 100%;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 0;
+  }
+  .top {
+    -ms-grid-row: 1;
+        grid-row-start: 1;
+    grid-row-end: 3;
+  }
+  .middle {
+    padding: 0 32px;
+  }
+  .bottom {
+    height: 100%;
+    padding: 0 32px;
+  }
+}
+
+@media screen and (orientation: portrait) and (max-height: 1024px) {
+  .parameters {
+    width: 100%;
+    padding: 0 32px;
+  }
+  .controls {
+    width: 100%;
+    padding-left: 32px;
+    padding-right: 32px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    gap: 16px;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

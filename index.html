@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+	<meta charset="UTF-8" />
+	<title>AC by Joel</title>
+	<link rel="manifest" href="manifest.json">
+	<!-- Viewport -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Estilos -->
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<!-- Favicon -->
+	<link rel="icon" type="image/jpg" sizes="32x32" href="#">
+	<!-- Google Fonts (Roboto, Open Sans) -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800">
+</head>
+<body>
+	<div class="top">
+			<div class="cronometro">
+				<div id="info_state" class="state">welcome</div>
+				<div id="info_time" class="time">-</div>
+				<div id="info_set" class="info">0/13</div>
+			</div>
+	</div>
+	<div class="middle">
+		<div class="parameters">
+			<label class="drawTime">
+				Draw Time
+				<input type="number" id="drawTime" name="drawTime" placeholder="...">
+			</label>
+			<label class="restTime">
+				Rest Time
+				<input type="number" id="restTime" name="restTime" placeholder="...">
+			</label>
+			<label class="duration">
+				Duration
+				<input type="number" id="duration" name="duration" placeholder="...">
+			</label>
+			<label class="startCountdown">
+				Start Countdown
+				<input type="number" id="startCountdown" name="startCountdown" placeholder="...">
+			</label>
+			<label class="drawCountdown">
+				Draw Countdown
+				<input type="number" id="drawCountdown" name="drawCountdown" placeholder="...">
+			</label>
+			<label class="restCountdown">
+				Rest Countdown
+				<input type="number" id="restCountdown" name="restCountdown" placeholder="...">
+			</label>
+		</div>
+	</div>
+	<div class="bottom">
+		<div class="controls">
+			<div id="btn_start"class="start">
+				Start
+			</div>
+			<div id="btn_pause"class="pause">
+				Pause
+			</div>
+			<div id="btn_stop" class="stop">
+				Stop
+			</div>
+		</div>
+	</div>
+
+	<!-- Scripts -->
+	<script type="text/javascript" src="beep.js"></script>
+	<script type="text/javascript" src="scripts.js"></script>
+</body>
+</html>

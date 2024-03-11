@@ -1,0 +1,9 @@
+{
+	"short_name": "AC by Joel",
+	"name": "Arquería Contador",
+	"start_url": "index.html",
+	"background_color": "#111",
+	"theme_color": "#111",
+	"scope":"/v2/",
+	"display": "fullscreen"
+}
