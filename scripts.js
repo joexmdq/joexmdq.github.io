@@ -195,7 +195,7 @@ function START_CHRONO() {
 
 		// Cuando es el último segundo, no importa de quien, hace este otro beep
 		// Y según el estado y demas
-		if(data.elapsedTime === 0) {
+		if(data.elapsedTime <= 0) {
 			beep(100,1000,volume);
 
 			if(data.currentSet < data.sets) {
